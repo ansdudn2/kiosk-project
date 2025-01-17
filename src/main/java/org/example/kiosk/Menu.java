@@ -1,6 +1,5 @@
 package org.example.kiosk;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
@@ -8,9 +7,9 @@ public class Menu {
     private final List<MenuItem> menuItems; // 메뉴 항목 리스트
 
     // 생성자
-    public Menu(String categoryName) {
+    public Menu(String categoryName, List<MenuItem> menuItems) {
         this.categoryName = categoryName;
-        this.menuItems = new ArrayList<>();
+        this.menuItems = menuItems;
     }
 
     // 카테고리 이름 반환
