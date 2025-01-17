@@ -34,5 +34,6 @@ public class Menu {
             MenuItem item = menuItems.get(i);
             System.out.println((i + 1) + ". " + item.getName() + " | W " + item.getPrice() + " | " + item.getDescription());
         }
+        System.out.println("0.뒤로가기"); //뒤로가기 추가
     }
 }
