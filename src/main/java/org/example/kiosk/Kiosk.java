@@ -13,11 +13,12 @@ public class Kiosk {
         this.menus = menus;
     }
 
-    //getter와 setter 추가
+    // Getter 메서드: 외부에서 menus 값을 조회할 수 있게 제공
     public List<Menu> getMenus() {
         return menus;
     }
 
+    // Setter 메서드: 외부에서 menus 값을 수정할 수 있게 제공
     public void setMenus(List<Menu> menus) {
         this.menus = menus;
     }
@@ -35,8 +36,7 @@ public class Kiosk {
             // List와 Menu 클래스 활용하여 상위 카테고리 메뉴 출력
             System.out.println("[ MAIN MENU ]");
 
-
-            //for문을 이용해 매뉴 출력
+            //for문을 이용해 매뉴 출력(카테고리 부분)
             for (int i = 0; i < menus.size(); i++) {
                 System.out.println((i + 1) + "." + menus.get(i).getCategoryName());
             }
@@ -44,22 +44,25 @@ public class Kiosk {
             System.out.println("0.종료");
             System.out.println("번호를 선택해주세요.");
 
-            //상위 메뉴 선택
+            //카테고리 번호 입력 받기
             while (true) {
                 //숫자입력
                 choice = sc.nextInt();
                 if (choice == 0) {
-                    // 종료 메시지 출력
+                    //0을 입력하면 종료 메시지 출력 후 종료
                     System.out.println("키오스크를 종료합니다.");
-                    return; // 첫 번째 루프 종료
+                    return; // 키오스크 종료
                 }
-                //선택한 카테고리 출력
+                //카테고리가 유효한 범위인지 확인
                 if (choice != 0) {
                     if (choice >= 1 && choice <= menus.size()) {
+                        //선택한 카테고리에 해당하는 메뉴 객체를 가져옴
                         Menu selectedMenu = menus.get(choice - 1);
-                        selectedMenu.printMenu();
+                        selectedMenu.printMenu(); // 해당 카테고리의 메뉴 항목 출력
 
                         System.out.println("번호를 선택해주세요");
+
+                        //메뉴 항목을 선택하는 루프
                         while (true) {
                             int itemChoice = sc.nextInt();
                             //매뉴 선택 및 출력
@@ -70,8 +73,9 @@ public class Kiosk {
                                 System.out.println("설명: " + selectedItem.getDescription());
                                 break;//메뉴 선택 후 나가기
                             } else if (itemChoice == 0) {
-                                break;//뒤로가기
+                                break;//0을 입력하면 뒤로가기
                             } else {
+                                //잘못된 입력 처리
                                 System.out.println("잘못된 입력입니다. 다시 선택해주세요.");
                                 selectedMenu.printMenu(); // 메뉴 재출력
                                 System.out.println("번호를 선택해주세요");
@@ -79,6 +83,7 @@ public class Kiosk {
                         }
                         break; //메뉴 카테고리 선택후 종료
                     } else {
+                        //잘못된 카테고리 입력 처리
                         System.out.println("다시선택해주세요.");
                     }
                 }
