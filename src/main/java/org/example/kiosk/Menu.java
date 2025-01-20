@@ -3,8 +3,8 @@ package org.example.kiosk;
 import java.util.List;
 
 public class Menu {
-    private final String categoryName;  // 카테고리 이름
-    private final List<MenuItem> menuItems; // 메뉴 항목 리스트
+    private String categoryName;  // 카테고리 이름
+    private List<MenuItem> menuItems; // 메뉴 항목 리스트
 
     // 생성자
     public Menu(String categoryName, List<MenuItem> menuItems) {
@@ -12,14 +12,13 @@ public class Menu {
         this.menuItems = menuItems;
     }
 
-    // 카테고리 이름 반환
     public String getCategoryName() {
         return categoryName;
     }
 
-    // MenuItem 추가
-    public void addMenuItem(MenuItem item) {
-        menuItems.add(item);
+    // 카테고리 이름 반환
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
     // MenuItem 리스트 반환
