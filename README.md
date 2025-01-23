@@ -1,9 +1,12 @@
 #Kiosk_Project
 이번에 맡게된 키오스크 만들기 프로젝트입니다.
+
 ##👨‍🏫프로젝트 소개
 키오스크에서 음식을골라 가격과 정보를 뽑아낼수있습니다.
+
 ##⏲️개발기간
 -2025.01.13~2025.01.17
+
 ##🧑‍🤝‍🧑개발자 소개
 -**문정호**:이번 개발은 혼자하였습니다.
 <div align=center> 
@@ -15,6 +18,7 @@
   </tbody>
 </table>
 </div>
+
 ##📚STACKS
 <div align=center> 
   <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> 
